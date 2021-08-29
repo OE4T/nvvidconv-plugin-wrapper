@@ -3,7 +3,7 @@
 
 cmake_minimum_required(VERSION 3.8)
 cmake_policy(SET CMP0048 NEW)
-project(nvvidconv_plugin_wrapper LANGUAGES C VERSION 1.0.0)
+project(nvvidconv_plugin_wrapper LANGUAGES C VERSION 1.0.1)
 include(GNUInstallDirs)
 
 set(CMAKE_C_STANDARD 11)
