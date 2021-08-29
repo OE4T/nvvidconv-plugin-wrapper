@@ -67,11 +67,9 @@ plugin_init (int fd)
         goto error_depart;
     }
     ctx->vidconv_plugin_ctx = ctx->vidconv_dev_ops->init(fd);
-    if (ctx->vidconv_plugin_ctx == NULL) {
-        fprintf(stderr, "nvvidconv plugin init returned NULL\n");
-        goto error_depart;
-    }
-    return ctx;
+    if (ctx->vidconv_plugin_ctx != NULL)
+        return ctx;
+    /* otherwise, fall through */
 error_depart:
     dlclose(ctx->vidconv_library);
     free(ctx);
